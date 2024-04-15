@@ -1,0 +1,14 @@
+﻿@inject FipsService FipsService
+
+
+@code{
+
+    [Parameter] public FipsDetail? xyzInC { get; set; }
+
+    private async Task LoadData(FipsDetailQuery query)
+    {
+        xyzInC = await FipsService.GetFipsDetail(query);
+        StateHasChanged();
+    }
+
+}
